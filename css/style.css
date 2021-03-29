@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bg{
+  position: relative;
+}
+
+.bg > div:first-child{
+  height: 15vh;
+  background-color: #009688;
+}
+
+.bg > div:nth-child(2){
+  height: 85vh;
+  background-color: #DBDBD2;
+}
+
+.container{
+  position: absolute;
+  top: 2.5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 95vh;
+  width: 1000px;
+  background-color: red;
+}
+
+.contacts{
+  width: 350px;
+  height: 100%;
+  background-color: green;
+}
+
+.contacts > div{
+  width: 100%;
+}
+
+.user{
+  height: 100px;
+}
