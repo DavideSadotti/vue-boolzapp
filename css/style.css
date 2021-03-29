@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+body{
+  font-family: 'Lato', sans-serif;
+}
+
+i{
+  font-size: 20px;
+  color: #919191;
+}
+
 .bg{
   position: relative;
 }
@@ -24,12 +33,12 @@
   left: 50%;
   transform: translateX(-50%);
   height: 95vh;
-  width: 1000px;
+  width: 1300px;
   background-color: red;
 }
 
 .contacts{
-  width: 350px;
+  width: 450px;
   height: 100%;
   background-color: green;
 }
@@ -39,5 +48,66 @@
 }
 
 .user{
-  height: 100px;
+  height: 60px;
+  background-color: #ededed;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.user > div:first-child{
+  display: flex;
+}
+
+.user > div:first-child, .user > div:last-child, .user p{
+  align-self: center;
+}
+
+.user img{
+  height: 40px;
+  border-radius: 50%;
+}
+
+.user p{
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.user li{
+  list-style: none;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.notifications{
+  height: 80px;
+  background-color: #9de1fe;
+  padding: 12.5px 30px;
+  display: flex;
+}
+
+.notifications > div:last-child{
+  align-self: center;
+  margin: 0 10px;
+}
+
+.notifications i{
+  font-size: 25px;
+  color: #9de1fe;
+  padding: 15px 13px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.notifications p{
+  font-weight: bold;
+}
+
+.notifications a{
+  color: #919191;
+}
+
+.search{
+  height: 50px;
+  background-color: #f6f6f6;
 }
