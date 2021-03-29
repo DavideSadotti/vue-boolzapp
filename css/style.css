@@ -54,7 +54,7 @@ i{
 }
 
 /* BLOCCO USER E CONTACTLIST */
-.user, .contactSelected, .text{
+.user, .text{
   height: 60px;
   background-color: #ededed;
   display: flex;
@@ -93,7 +93,7 @@ i{
   align-self: center;
 }
 
-.user img, .contactList img{
+.user img, .contactList img, .contactSelected img{
   height: 40px;
   border-radius: 50%;
   align-self: center;
@@ -177,12 +177,34 @@ i{
   width: 850px;
 }
 
-.contactSelected, .text{
-  border-left: 1px solid rgba(0,0,0,0.08);
+.contactSelected{
+  height: 60px;
+  background-color: #ededed;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
-.contactSelected{
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+.contactSelected > div > div{
+  display: flex;
+}
+
+.contactSelected > div > div > div:last-child{
+  margin: 0 15px;
+  align-self: center;
+}
+
+.contactSelected > div:first-child{
+  float: left;
+}
+
+.contactSelected > div:last-child{
+  float: right;
+  margin-top: 10px;
+}
+
+.contactSelected, .text{
+  border-left: 1px solid rgba(0,0,0,0.08);
 }
 
 .text{

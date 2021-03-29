@@ -55,7 +55,7 @@
           </div>
           <div class="contactList">
             <ul>
-              <li v-for="item in contacts">
+              <li v-for="(item, i) in contacts" @click="showContact(i)">
                 <img :src="'img/avatar' + item.avatar + '.jpg'">
                 <p>{{ item.name }}</p>
               </li>
@@ -66,10 +66,16 @@
         <!-- LEFT SIDE -->
         <div class="messages">
           <div class="contactSelected">
-            <div>
-              <img src="">
-              <p></p>
-              <small></small>
+            <div v-for="item in contacts" v-if="item.visible == false">
+              <div>
+                <div>
+                  <img :src="'img/avatar' + item.avatar + '.jpg'">
+                </div>
+                <div>
+                  <p>{{ item.name }}</p>
+                  <small>Ultimo accesso oggi alle..</small>
+                </div>
+              </div>
             </div>
             <div>
               <ul>
@@ -86,7 +92,12 @@
             </div>
           </div>
 
-          <div class="message"></div>
+          <div class="message">
+            <div v-for="item in contacts" v-if="item.visible == false">
+              <p></p>
+              <small></small>
+            </div>
+          </div>
 
           <div class="text">
             <div>
