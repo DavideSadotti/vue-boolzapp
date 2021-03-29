@@ -14,9 +14,7 @@
     <title>Boolzapp</title>
   </head>
   <body>
-    <div class="bg">
-      <div></div>
-      <div></div>
+    <div id="root" class="bg">
       <div class="container">
 
         <!-- RIGHT SIDE -->
@@ -52,9 +50,17 @@
           <div class="search">
             <div>
               <i class="fas fa-search"></i>
+              <input type="text" placeholder="Cerca o inizia una nuova chat">
             </div>
           </div>
-          <div class="contactList"></div>
+          <div class="contactList">
+            <ul>
+              <li v-for="item in contacts">
+                <img :src="'img/avatar' + item.avatar + '.jpg'">
+                <p>{{ item.name }}</p>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <!-- LEFT SIDE -->
