@@ -42,6 +42,9 @@ i{
   box-shadow: 0 1px 1px 0 rgba(0,0,0,0.06), 0 2px 5px 0 rgba(0,0,0,0.2);
 }
 
+.grey{
+  background-color: #ebebeb;
+}
 
 /* -------------LEFT SIDE------------- */
 .contacts{
@@ -177,6 +180,7 @@ i{
   width: 850px;
 }
 
+/* CLASS CONTACT SELECTED */
 .contactSelected{
   height: 60px;
   background-color: #ededed;
@@ -207,6 +211,71 @@ i{
   border-left: 1px solid rgba(0,0,0,0.08);
 }
 
+/* CLASS MESSAGELIST */
+.messageList{
+  height: calc(100% - 120px);
+  background-image: url('../img/mine.jpg');
+}
+
+.messageList > div{
+  width: 80%;
+  margin: auto;
+  padding: 50px;
+}
+
+.messageList .clear > div{
+  margin-top: 15px;
+}
+
+.messageList small{
+  font-size: 11px;
+  color: rgba(0,0,0,0.5);
+  align-self: flex-end;
+}
+
+.messageList .sent, .messageList .received{
+  padding: 6px 7px 8px 9px;
+  border-radius: 5px;
+  min-height: 50px;
+  display: flex;
+  position: relative;
+  filter: drop-shadow(0 1px .5px rgba(0,0,0,.13));
+}
+
+.messageList .sent{
+  float: right;
+  background-color: #dcf8c6;
+}
+
+.messageList .received{
+  float: left;
+  background-color: #ffffff;
+}
+
+.sent i, .received i{
+  position: absolute;
+  font-size: 30px;
+}
+
+.sent i{
+  right: -8px;
+  top: -11px;
+  color: #dcf8c6;
+}
+
+.received i{
+  left: -8px;
+  top: -11px;
+  color: #ffffff;
+}
+
+.clear::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* CLASS TEXT */
 .text{
   border-top: 1px solid rgba(0,0,0,0.08);
 }
@@ -225,9 +294,4 @@ i{
 
 .text i{
   margin: 0 15px
-}
-
-.message{
-  height: calc(100% - 120px);
-  background-image: url('../img/mine.jpg');
 }

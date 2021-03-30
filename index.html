@@ -17,7 +17,7 @@
     <div id="root" class="bg">
       <div class="container">
 
-        <!-- RIGHT SIDE -->
+        <!-- LEFT SIDE -->
         <div class="contacts">
           <div class="user">
             <div>
@@ -55,7 +55,7 @@
           </div>
           <div class="contactList">
             <ul>
-              <li v-for="(item, i) in contacts" @click="showContact(i)">
+              <li v-for="(item, i) in contacts" @click="showContact(i)" :class="item.selected">
                 <img :src="'img/avatar' + item.avatar + '.jpg'">
                 <p>{{ item.name }}</p>
               </li>
@@ -63,7 +63,7 @@
           </div>
         </div>
 
-        <!-- LEFT SIDE -->
+        <!-- RIGHT SIDE -->
         <div class="messages">
           <div class="contactSelected">
             <div v-for="item in contacts" v-if="item.visible == false">
@@ -92,10 +92,21 @@
             </div>
           </div>
 
-          <div class="message">
-            <div v-for="item in contacts" v-if="item.visible == false">
-              <p></p>
-              <small></small>
+          <div class="messageList">
+            <div>
+              <div v-for="item in contacts" v-if="item.visible == false">
+                <div v-for="mess in item.messages" class="clear">
+                  <div :class="mess.status == 'sent' ? 'sent' : 'received'">
+                    <p>
+                      {{ mess.message }}
+                    </p>
+                    <small>
+                      {{ mess.date }}
+                    </small>
+                    <i class="fas fa-caret-down"></i>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
