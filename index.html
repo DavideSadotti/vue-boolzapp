@@ -115,7 +115,7 @@
               <i class="far fa-smile-wink"></i>
             </div>
             <div>
-              <input type="text" placeholder="Scrivi un messaggio">
+              <input type="text" placeholder="Scrivi un messaggio" v-model="cleared" @keydown.13="sendMsg">
             </div>
             <div>
               <i class="fas fa-microphone"></i>
@@ -126,6 +126,9 @@
 
       </div>
     </div>
+    
+    <!-- DAY.JA-->
+    <script src="https://unpkg.com/dayjs"></script>
     <!-- JAVASCRIPT -->
     <script src="js/script.js"></script>
   </body>

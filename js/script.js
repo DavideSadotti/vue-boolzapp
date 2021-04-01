@@ -2,6 +2,8 @@ var app = new Vue(
   {
     el: '#root',
     data: {
+      cleared: '',
+      contactIndex: 0,
       contacts: [
         {
           name: 'Michele',
@@ -102,13 +104,32 @@ var app = new Vue(
           }
         }
 
+        this.contactIndex = index;
         indice.selected = 'grey';
         indice.visible = false;
       },
+      sendMsg: function(){
+        if(this.cleared !== ''){
+          for(var i = 0; i < this.contacts.length; i++){
+            if(this.contacts[i].visible == false){
+              this.contacts[i].messages.push({
+                date: dayjs().format('DD/MM/YY HH.mm'),
+                message: this.cleared,
+                status: 'sent'
+              });
+            }
+          }
+          setTimeout(this.receiveMsg, 1000);
+          this.cleared = '';
+        }
+      },
+      receiveMsg: function(){
+        this.contacts[this.contactIndex].messages.push({
+          date: dayjs().format('DD/MM/YY HH.mm'),
+          message: 'Ok',
+          status: 'received'
+        });
+      }
     }
   }
 );
-
-// function cancelContac(){
-//
-// }
