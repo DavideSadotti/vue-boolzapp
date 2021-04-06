@@ -50,12 +50,12 @@
           <div class="search">
             <div>
               <i class="fas fa-search"></i>
-              <input type="text" placeholder="Cerca o inizia una nuova chat">
+              <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="newSearch" @keydown="searchContact">
             </div>
           </div>
           <div class="contactList">
             <ul>
-              <li v-for="(item, i) in contacts" @click="showContact(i)" :class="item.selected">
+              <li v-for="(item, i) in contacts" @click="showContact(i)" :class="item.selected" v-if="item.search == true">
                 <img :src="'img/avatar' + item.avatar + '.jpg'">
                 <p>{{ item.name }}</p>
               </li>
@@ -126,7 +126,7 @@
 
       </div>
     </div>
-    
+
     <!-- DAY.JA-->
     <script src="https://unpkg.com/dayjs"></script>
     <!-- JAVASCRIPT -->

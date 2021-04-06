@@ -4,11 +4,13 @@ var app = new Vue(
     data: {
       cleared: '',
       contactIndex: 0,
+      newSearch: '',
       contacts: [
         {
           name: 'Michele',
           avatar: '_1',
           visible: true,
+          search: true,
           selected: '',
           messages: [
             {
@@ -32,6 +34,7 @@ var app = new Vue(
           name: 'Fabio',
           avatar: '_2',
           visible: true,
+          search: true,
           selected: '',
           messages: [
             {
@@ -55,6 +58,7 @@ var app = new Vue(
           name: 'Samuele',
           avatar: '_3',
           visible: true,
+          search: true,
           selected: '',
           messages: [
             {
@@ -78,6 +82,7 @@ var app = new Vue(
           name: 'Luisa',
           avatar: '_4',
           visible: true,
+          search: true,
           selected: '',
           messages: [
             {
@@ -129,6 +134,15 @@ var app = new Vue(
           message: 'Ok',
           status: 'received'
         });
+      },
+      searchContact: function(){
+        for(var i = 0; i < this.contacts.length; i++) {
+          if(this.contacts[i].name.toLowerCase().includes(this.newSearch.toLowerCase())) {
+            this.contacts[i].search = true;
+          }else{
+            this.contacts[i].search = false;
+          }
+        }
       }
     }
   }
